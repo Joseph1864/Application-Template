@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
 }
 
@@ -71,10 +72,10 @@ dependencies {
     implementation (libs.androidx.room.paging)
 
     //Coroutines
-    implementation (libs.retrofit2.kotlin.coroutines.adapter)
 
     //Viewmodel
-    implementation (libs.androidx.lifecycle.extensions)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.runtime.ktx)
 
     //Koin
     implementation (libs.koin.android)

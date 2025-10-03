@@ -28,17 +28,28 @@ fun HomeScreen(
     val viewState by viewModel.viewState.collectAsStateWithLifecycle()
     val tasks = viewState.tasks
 
+    if (viewState.isCreateDialogVisible) {
+        CreateTaskDialog(
+            title = viewState.newTaskTitle,
+            description = viewState.newTaskDescription,
+            onTitleChanged = viewModel::onTitleChanged,
+            onDescriptionChanged = viewModel::onDescriptionChange,
+            onDismiss = viewModel::onDismissCreateDialog,
+            onSubmit = viewModel::onSubmitCreateDialog
+        )
+    }
+
     Column {
         TopAppBar(
             title = { Text(text = "ToDo") },
             actions = {
                 IconButton(
-                    onClick = { viewModel.onCreateTaskClick() },
+                    onClick = { viewModel.onShowCreateDialog() },
 
                 ) {
                     Icon(
                         imageVector = Icons.Default.Add,
-                        contentDescription = "",
+                        contentDescription = null,
                     )
                 }
             }
@@ -56,7 +67,9 @@ fun HomeScreen(
 
                 TaskCard(
                     task = task,
-                    onCompleteTaskClick = { viewModel.onCompleteTaskClick(it) }
+                    onCompleteTaskClick = { viewModel.onCompleteTaskClick(it) },
+                    onEditTaskClick =  { viewModel.onEditTaskClick(it) },
+                    onDeleteTaskClick = { viewModel.onDeleteTaskClick(it) },
                 )
             }
         }

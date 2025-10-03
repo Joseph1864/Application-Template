@@ -22,7 +22,7 @@ class HomeScreenViewModel(): ViewModel() {
             status = Task.Status.INCOMPLETE,
         )
 
-        val updatedTasks = _viewState.value.tasks + newTask
+        val updatedTasks = (_viewState.value.tasks + newTask).sortedBy { it.status == Task.Status.COMPLETE }
         _viewState.value = _viewState.value.copy(
             tasks = updatedTasks,
             isCreateDialogVisible = false,
@@ -57,7 +57,7 @@ class HomeScreenViewModel(): ViewModel() {
                         Task.Status.COMPLETE
                 )
             } else it
-        }
+        }.sortedBy { it.status == Task.Status.COMPLETE }
         _viewState.value = _viewState.value.copy(tasks = updatedTasks)
     }
 

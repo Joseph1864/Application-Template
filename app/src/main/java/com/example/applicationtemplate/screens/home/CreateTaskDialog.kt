@@ -18,7 +18,7 @@ fun CreateTaskDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("Create Task") },
+        title = { Text("Create New Task") },
         text = {
             Column {
                 OutlinedTextField(

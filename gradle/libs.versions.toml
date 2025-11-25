@@ -16,7 +16,7 @@ lifecycleViewmodelCompose = "2.9.4"
 lifecycleViewmodelKtx = "2.9.4"
 material = "1.13.0"
 navigationCompose = "2.9.6"
-okhttp = "5.3.0"
+okhttp = "5.3.2"
 retrofit = "3.0.0"
 roomKtx = "2.8.3"
 

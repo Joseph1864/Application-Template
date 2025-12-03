@@ -1,6 +1,6 @@
 [versions]
 agp = "8.13.1"
-composeBom = "2025.11.01"
+composeBom = "2025.12.00"
 composeBomVersion = "2025.11.01"
 constraintlayoutCompose = "1.1.1"
 koinAndroid = "4.1.1"

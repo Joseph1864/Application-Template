@@ -56,6 +56,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation (platform(libs.androidx.compose.bom))
     androidTestImplementation (platform(libs.androidx.compose.bom.v20250800))
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.compose.ui)
+
 
     //ConstraintLayout
     implementation (libs.androidx.constraintlayout.compose)
@@ -72,6 +75,8 @@ dependencies {
     implementation (libs.androidx.room.paging)
 
     //Coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
 
     //Viewmodel
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
